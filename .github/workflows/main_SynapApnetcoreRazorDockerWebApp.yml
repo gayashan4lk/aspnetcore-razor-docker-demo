@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e53195bb2d494c9eba19c6931affbeb0 }}/gayashan4lk/aspnetcore-webapp-docker:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./Synap-aspnetcore-docker/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
