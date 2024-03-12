@@ -26,17 +26,11 @@ jobs:
         username: ${{ secrets.AzureAppService_ContainerUsername_e53195bb2d494c9eba19c6931affbeb0 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_39603966453c4e91908ce1cb42a93042 }}
 
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@v3
-      with:
-          images: gayashan4lk/aspnetcore-webapp-docker
-
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e53195bb2d494c9eba19c6931affbeb0 }}/gayashan4lk/aspnetcore-webapp-docker:latest
         file: ./Synap-aspnetcore-docker/Dockerfile
 
   deploy:
