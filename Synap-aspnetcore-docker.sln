@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34511.98
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synap-aspnetcore-docker", "Synap-aspnetcore-docker\Synap-aspnetcore-docker.csproj", "{0C98C4CF-48E1-4C14-BE51-D07F18A0B5B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C98C4CF-48E1-4C14-BE51-D07F18A0B5B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C98C4CF-48E1-4C14-BE51-D07F18A0B5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C98C4CF-48E1-4C14-BE51-D07F18A0B5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C98C4CF-48E1-4C14-BE51-D07F18A0B5B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FC3F624-7561-46D8-86D0-720E517259AE}
+	EndGlobalSection
+EndGlobal
