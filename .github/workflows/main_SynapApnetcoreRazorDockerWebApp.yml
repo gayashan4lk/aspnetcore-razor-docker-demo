@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Production
+name: Build and deploy container app to Azure Web App - SynapApnetcoreRazorDockerWebApp
 
 on:
   push:
@@ -23,15 +23,15 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_e53195bb2d494c9eba19c6931affbeb0 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_39603966453c4e91908ce1cb42a93042 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_013e8dbb0f6c43cdb3fc730678fc1697 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_2075fbedf3c648d395bc80af3a40da5d }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e53195bb2d494c9eba19c6931affbeb0 }}/aspnetcore-webapp-docker:latest
-        file: ./Synap-aspnetcore-docker/Dockerfile
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_013e8dbb0f6c43cdb3fc730678fc1697 }}/aspnetcore-webapp-docker:${{ github.sha }}
+        file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'SynapApnetcoreRazorDockerWebApp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_454acddc451145629281ae1d7a84e0cb }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e53195bb2d494c9eba19c6931affbeb0 }}/gayashan4lk/aspnetcore-webapp-docker:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_31dacd9bc5474847959efbf62e66e2f3 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_013e8dbb0f6c43cdb3fc730678fc1697 }}/aspnetcore-webapp-docker:${{ github.sha }}'
